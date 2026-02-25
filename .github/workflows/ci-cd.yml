@@ -1,4 +1,4 @@
-name: Project CI/CD Pipeline
+name: DevMart
 on:
   push:
     branches: [main]
