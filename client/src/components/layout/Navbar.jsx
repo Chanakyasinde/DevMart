@@ -60,7 +60,6 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 lg:h-18">
-                    {/* Logo */}
                     <Link to="/" className="flex items-center gap-2.5 group">
                         <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-shadow duration-300">
                             <Package className="w-5 h-5 text-white" />
@@ -70,7 +69,6 @@ const Navbar = () => {
                         </span>
                     </Link>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center gap-1">
                         {navLinks.map((link) => (
                             <Link
@@ -86,7 +84,6 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Search Bar (Desktop) */}
                     <form
                         onSubmit={handleSearch}
                         className="hidden lg:flex items-center flex-1 max-w-md mx-6"
@@ -103,7 +100,6 @@ const Navbar = () => {
                         </div>
                     </form>
 
-                    {/* Right Actions */}
                     <div className="hidden lg:flex items-center gap-3">
                         {isLoggedIn ? (
                             <div className="relative">
@@ -156,7 +152,6 @@ const Navbar = () => {
                         )}
                     </div>
 
-                    {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="lg:hidden p-2 rounded-lg hover:bg-white/[0.06] transition-colors"
@@ -170,11 +165,9 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             {isOpen && (
                 <div className="lg:hidden bg-surface-900/95 backdrop-blur-xl border-t border-white/[0.06] animate-slide-down">
                     <div className="px-4 py-4 space-y-2">
-                        {/* Mobile Search */}
                         <form onSubmit={handleSearch} className="mb-3">
                             <div className="relative">
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-surface-200/40" />

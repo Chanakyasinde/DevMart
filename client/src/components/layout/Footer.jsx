@@ -28,9 +28,7 @@ const Footer = () => {
     return (
         <footer className="mt-auto border-t border-white/[0.06] bg-surface-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Main Footer */}
                 <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-                    {/* Brand Column */}
                     <div className="col-span-2 md:col-span-1">
                         <Link to="/" className="flex items-center gap-2.5 mb-4">
                             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
@@ -69,7 +67,6 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Link Columns */}
                     {Object.entries(footerLinks).map(([title, links]) => (
                         <div key={title}>
                             <h4 className="text-sm font-semibold text-white mb-4">{title}</h4>
@@ -89,7 +86,6 @@ const Footer = () => {
                     ))}
                 </div>
 
-                {/* Bottom Bar */}
                 <div className="py-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3">
                     <p className="text-sm text-surface-200/40">
                         © {currentYear} DevMart. All rights reserved.
