@@ -91,7 +91,7 @@ const Footer = () => {
                         © {currentYear} DevMart. All rights reserved.
                     </p>
                     <p className="text-sm text-surface-200/40 flex items-center gap-1">
-                        Built with <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" /> for developers
+                        Built by Chanakya Sinde <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" />
                     </p>
                 </div>
             </div>
