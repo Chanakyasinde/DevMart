@@ -237,7 +237,6 @@ const Seller = () => {
                                         </div>
                                     </div>
 
-                                    {/* Actions */}
                                     <div className="flex items-center gap-2">
                                         <button
                                             onClick={() => openEditModal(product)}
