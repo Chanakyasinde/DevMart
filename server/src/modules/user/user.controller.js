@@ -1,7 +1,7 @@
 const userService = require('./user.service');
 
 const sendTokenResponse = (user, statusCode, res) => {
-    const token = user.getSignedJwtToken();
+    const token = user.generateAuthToken();
     const options = {
         expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days
         httpOnly: true,
