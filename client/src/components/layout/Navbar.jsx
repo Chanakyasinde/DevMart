@@ -54,15 +54,15 @@ const Navbar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-surface-950/80 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/20'
-                    : 'bg-transparent'
+                ? 'bg-surface-950/80 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/20'
+                : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 lg:h-18">
                     <Link to="/" className="flex items-center gap-2.5 group">
-                        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-shadow duration-300">
-                            <Package className="w-5 h-5 text-white" />
+                        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-shadow duration-300">
+                            <Package className="w-5 h-5 text-surface-950" />
                         </div>
                         <span className="text-xl font-bold font-display text-white">
                             Dev<span className="gradient-text">Mart</span>
@@ -75,8 +75,8 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${location.pathname === link.path
-                                        ? 'text-white bg-white/[0.08]'
-                                        : 'text-surface-200/60 hover:text-white hover:bg-white/[0.04]'
+                                    ? 'text-white bg-white/[0.08]'
+                                    : 'text-surface-200/60 hover:text-white hover:bg-white/[0.04]'
                                     }`}
                             >
                                 {link.label}
@@ -95,7 +95,7 @@ const Navbar = () => {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search templates, UI kits, APIs..."
-                                className="w-full pl-10 pr-4 py-2.5 bg-white/[0.04] border border-white/[0.08] rounded-xl text-sm text-white placeholder-surface-200/40 focus:outline-none focus:border-primary-500/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-primary-500/20 transition-all duration-200"
+                                className="w-full pl-10 pr-4 py-2.5 bg-surface-900 border border-surface-800 rounded-xl text-sm text-white placeholder-surface-400 focus:outline-none focus:border-accent-500/40 focus:bg-surface-850 focus:ring-1 focus:ring-accent-500/20 transition-all duration-200"
                             />
                         </div>
                     </form>
@@ -107,7 +107,7 @@ const Navbar = () => {
                                     onClick={() => setIsProfileOpen(!isProfileOpen)}
                                     className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-white/[0.04] transition-all duration-200"
                                 >
-                                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white text-sm font-bold">
+                                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-surface-950 text-sm font-bold">
                                         {user?.name?.charAt(0)?.toUpperCase() || 'U'}
                                     </div>
                                     <span className="text-sm font-medium text-surface-200/80">
@@ -186,8 +186,8 @@ const Navbar = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${location.pathname === link.path
-                                        ? 'text-white bg-white/[0.08]'
-                                        : 'text-surface-200/60 hover:text-white hover:bg-white/[0.04]'
+                                    ? 'text-white bg-white/[0.08]'
+                                    : 'text-surface-200/60 hover:text-white hover:bg-white/[0.04]'
                                     }`}
                             >
                                 {link.label}

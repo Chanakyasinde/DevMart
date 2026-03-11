@@ -72,15 +72,15 @@ const Signup = () => {
     return (
         <div className="min-h-screen flex items-center justify-center px-4 py-12">
             <div className="fixed inset-0 -z-10">
-                <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-accent-500/8 rounded-full blur-[150px]" />
-                <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-primary-500/6 rounded-full blur-[120px]" />
+                <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-accent-500/5 rounded-full blur-[150px]" />
+                <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-primary-500/5 rounded-full blur-[120px]" />
             </div>
 
             <div className="w-full max-w-md animate-scale-in">
                 <div className="text-center mb-8">
                     <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-glow">
-                            <Package className="w-5 h-5 text-white" />
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shadow-glow">
+                            <Package className="w-5 h-5 text-surface-950" />
                         </div>
                         <span className="text-2xl font-bold font-display text-white">
                             Dev<span className="gradient-text">Mart</span>
@@ -148,8 +148,8 @@ const Signup = () => {
                                         type="button"
                                         onClick={() => setFormData({ ...formData, role: role.value })}
                                         className={`p-3 rounded-xl border text-left transition-all duration-200 ${formData.role === role.value
-                                                ? 'bg-primary-500/10 border-primary-500/30 ring-1 ring-primary-500/20'
-                                                : 'bg-white/[0.02] border-white/[0.08] hover:bg-white/[0.04]'
+                                            ? 'bg-primary-500/10 border-primary-500/30 ring-1 ring-primary-500/20'
+                                            : 'bg-surface-800 border-surface-700 hover:bg-surface-700'
                                             }`}
                                     >
                                         <p className={`text-sm font-semibold ${formData.role === role.value ? 'text-primary-400' : 'text-white'}`}>
@@ -222,9 +222,9 @@ const Signup = () => {
                     </form>
                 </div>
 
-                <p className="text-center text-sm text-surface-200/50 mt-6">
+                <p className="text-center text-sm text-surface-400 mt-6">
                     Already have an account?{' '}
-                    <Link to="/login" className="text-primary-400 hover:text-primary-300 font-medium transition-colors">
+                    <Link to="/login" className="text-accent-500 hover:text-accent-400 font-medium transition-colors">
                         Sign in
                     </Link>
                 </p>

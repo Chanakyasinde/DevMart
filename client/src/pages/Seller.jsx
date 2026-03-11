@@ -141,10 +141,10 @@ const Seller = () => {
     const totalEarnings = products.reduce((sum, p) => sum + ((p.price || 0) * (p.downloads || 0)), 0);
 
     const statCards = [
-        { label: 'Total Products', value: products.length, icon: Package, color: 'from-blue-500 to-blue-600' },
-        { label: 'Total Downloads', value: totalDownloads, icon: Download, color: 'from-green-500 to-green-600' },
-        { label: 'Est. Earnings', value: `₹${totalEarnings.toLocaleString()}`, icon: DollarSign, color: 'from-purple-500 to-purple-600' },
-        { label: 'Avg. Rating', value: products.length > 0 ? (products.reduce((sum, p) => sum + (p.ratingsAverage || 0), 0) / products.length).toFixed(1) : '0.0', icon: TrendingUp, color: 'from-orange-500 to-orange-600' },
+        { label: 'Total Products', value: products.length, icon: Package, color: 'from-primary-500/20 to-primary-600/20', text: 'text-primary-400' },
+        { label: 'Total Downloads', value: totalDownloads, icon: Download, color: 'from-accent-500/20 to-accent-600/20', text: 'text-accent-400' },
+        { label: 'Est. Earnings', value: `₹${totalEarnings.toLocaleString()}`, icon: DollarSign, color: 'from-primary-500 to-primary-600', text: 'text-surface-950' },
+        { label: 'Avg. Rating', value: products.length > 0 ? (products.reduce((sum, p) => sum + (p.ratingsAverage || 0), 0) / products.length).toFixed(1) : '0.0', icon: TrendingUp, color: 'from-accent-500 to-accent-600', text: 'text-surface-950' },
     ];
 
     return (
@@ -172,7 +172,7 @@ const Seller = () => {
                     {statCards.map((stat, i) => (
                         <div key={i} className="glass-card p-5">
                             <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-3`}>
-                                <stat.icon className="w-5 h-5 text-white" />
+                                <stat.icon className={`w-5 h-5 ${stat.text || 'text-white'}`} />
                             </div>
                             <p className="text-2xl font-bold text-white font-display">{stat.value}</p>
                             <p className="text-xs text-surface-200/50 mt-0.5">{stat.label}</p>

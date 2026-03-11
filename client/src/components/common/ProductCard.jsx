@@ -58,7 +58,7 @@ const ProductCard = ({ product }) => {
                 </div>
 
                 <div className="p-5 flex flex-col flex-1">
-                    <h3 className="text-white font-semibold text-lg mb-1.5 line-clamp-1 group-hover:text-primary-400 transition-colors duration-200">
+                    <h3 className="text-white font-semibold text-lg mb-1.5 line-clamp-1 group-hover:text-accent-400 transition-colors duration-200">
                         {title}
                     </h3>
                     <p className="text-surface-200/50 text-sm line-clamp-2 mb-4 flex-1">
@@ -108,10 +108,10 @@ const ProductCard = ({ product }) => {
 
                     {seller && (
                         <div className="mt-3 flex items-center gap-2">
-                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary-500/40 to-accent-500/40 flex items-center justify-center text-[10px] text-white font-bold">
+                            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-[10px] text-surface-950 font-bold">
                                 {seller.name?.charAt(0)?.toUpperCase() || 'S'}
                             </div>
-                            <span className="text-xs text-surface-200/40">
+                            <span className="text-xs text-surface-400">
                                 by {seller.name || 'Unknown Seller'}
                             </span>
                         </div>

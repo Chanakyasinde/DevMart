@@ -151,7 +151,7 @@ const Search = () => {
                                 {hasActiveFilters && (
                                     <button
                                         onClick={clearFilters}
-                                        className="text-xs text-primary-400 hover:text-primary-300 transition-colors"
+                                        className="text-xs text-accent-500 hover:text-accent-400 transition-colors"
                                     >
                                         Clear all
                                     </button>
@@ -166,8 +166,8 @@ const Search = () => {
                                     <button
                                         onClick={() => setSelectedCategory('')}
                                         className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${!selectedCategory
-                                                ? 'bg-primary-500/10 text-primary-400 font-medium'
-                                                : 'text-surface-200/60 hover:text-white hover:bg-white/[0.04]'
+                                            ? 'bg-primary-500/10 text-primary-400 font-bold'
+                                            : 'text-surface-300 hover:text-white hover:bg-surface-800'
                                             }`}
                                     >
                                         All Categories
@@ -177,8 +177,8 @@ const Search = () => {
                                             key={cat}
                                             onClick={() => setSelectedCategory(cat)}
                                             className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${selectedCategory === cat
-                                                    ? 'bg-primary-500/10 text-primary-400 font-medium'
-                                                    : 'text-surface-200/60 hover:text-white hover:bg-white/[0.04]'
+                                                ? 'bg-primary-500/10 text-primary-400 font-bold'
+                                                : 'text-surface-300 hover:text-white hover:bg-surface-800'
                                                 }`}
                                         >
                                             {cat}

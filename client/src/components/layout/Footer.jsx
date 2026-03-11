@@ -31,8 +31,8 @@ const Footer = () => {
                 <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div className="col-span-2 md:col-span-1">
                         <Link to="/" className="flex items-center gap-2.5 mb-4">
-                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                                <Package className="w-5 h-5 text-white" />
+                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                                <Package className="w-5 h-5 text-surface-950" />
                             </div>
                             <span className="text-xl font-bold font-display text-white">
                                 Dev<span className="gradient-text">Mart</span>
