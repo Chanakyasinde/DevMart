@@ -25,6 +25,11 @@ const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    // Determine if current user can see seller-related UI
+    const currentUser = JSON.parse(localStorage.getItem('user') || 'null');
+    const isBuyer = currentUser && currentUser.role === 'BUYER';
+    const showSellerContent = !isBuyer; // show to guests, sellers, admins
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -71,9 +76,11 @@ const Home = () => {
                                 Explore Products
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
-                            <Link to="/signup" className="btn-secondary text-lg !px-8 !py-4">
-                                Start Selling
-                            </Link>
+                            {showSellerContent && (
+                                <Link to="/signup" className="btn-secondary text-lg !px-8 !py-4">
+                                    Start Selling
+                                </Link>
+                            )}
                         </div>
                     </div>
 
@@ -159,10 +166,16 @@ const Home = () => {
                         <div className="text-center py-16 glass-card">
                             <Package className="w-12 h-12 text-surface-200/20 mx-auto mb-4" />
                             <p className="text-surface-200/50 text-lg mb-2">No products yet</p>
-                            <p className="text-surface-200/30 text-sm mb-6">Be the first seller to list a product!</p>
-                            <Link to="/signup" className="btn-primary">
-                                Start Selling
-                            </Link>
+                            {showSellerContent ? (
+                                <>
+                                    <p className="text-surface-200/30 text-sm mb-6">Be the first seller to list a product!</p>
+                                    <Link to="/signup" className="btn-primary">
+                                        Start Selling
+                                    </Link>
+                                </>
+                            ) : (
+                                <p className="text-surface-200/30 text-sm">Check back soon for new products!</p>
+                            )}
                         </div>
                     )}
 
@@ -213,30 +226,32 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="py-20 lg:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="relative glass-card p-10 md:p-16 text-center overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary-600/10 via-transparent to-accent-600/10" />
-                        <div className="relative">
-                            <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-4">
-                                Ready to <span className="gradient-text">monetize</span> your code?
-                            </h2>
-                            <p className="text-surface-200/60 text-lg max-w-xl mx-auto mb-8">
-                                Join DevMart as a seller and start earning from your development expertise.
-                            </p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Link to="/signup" className="btn-primary text-lg !px-8 !py-4">
-                                    Create Seller Account
-                                    <ArrowRight className="w-5 h-5" />
-                                </Link>
-                                <Link to="/search" className="btn-secondary text-lg !px-8 !py-4">
-                                    Browse Products
-                                </Link>
+            {showSellerContent && (
+                <section className="py-20 lg:py-28">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="relative glass-card p-10 md:p-16 text-center overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/10 via-transparent to-accent-600/10" />
+                            <div className="relative">
+                                <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-4">
+                                    Ready to <span className="gradient-text">monetize</span> your code?
+                                </h2>
+                                <p className="text-surface-200/60 text-lg max-w-xl mx-auto mb-8">
+                                    Join DevMart as a seller and start earning from your development expertise.
+                                </p>
+                                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                    <Link to="/signup" className="btn-primary text-lg !px-8 !py-4">
+                                        Create Seller Account
+                                        <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                    <Link to="/search" className="btn-secondary text-lg !px-8 !py-4">
+                                        Browse Products
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
         </div>
     );
 };
