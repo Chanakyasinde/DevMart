@@ -18,17 +18,12 @@ jobs:
         with:
           node-version: '20'
         
-      - name: Install dependencies
-        working-directory: ./client
-        run: npm install
+      - name: Run setup script
+        run: ./scripts/setup.sh
 
       - name: Build frontend
         working-directory: ./client
         run: npm run build
-
-      - name: Install backend dependencies
-        working-directory: ./server
-        run: npm install
 
       - name: Run backend tests
         working-directory: ./server
