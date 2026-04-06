@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, Search, ShoppingCart, User, LogOut, Package, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, User, LogOut, Package, ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

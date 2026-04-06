@@ -34,6 +34,7 @@ const Search = () => {
 
     useEffect(() => {
         fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedCategory, sortBy]);
 
     useEffect(() => {
@@ -194,7 +195,7 @@ const Search = () => {
                             <div className="flex flex-wrap items-center gap-2 mb-6">
                                 {searchQuery && (
                                     <span className="badge gap-1.5">
-                                        "{searchQuery}"
+                                        &quot;{searchQuery}&quot;
                                         <button onClick={() => { setSearchQuery(''); setSearchParams({}); }}>
                                             <X className="w-3 h-3" />
                                         </button>

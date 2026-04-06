@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Package, DollarSign, Download, TrendingUp, Edit3, Trash2, X, AlertCircle, CheckCircle, Eye, Tag } from 'lucide-react';
+import { Plus, Package, DollarSign, Download, TrendingUp, Edit3, Trash2, X, AlertCircle, CheckCircle, Tag } from 'lucide-react';
 import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL || '';
@@ -42,6 +42,7 @@ const Seller = () => {
             return;
         }
         fetchMyProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const fetchMyProducts = async () => {
