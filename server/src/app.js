@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send('DevMart Backend Service');
 });
 
-app.all('*', (req, res, next) => {
+app.use((req, res, next) => {
   next(new AppError(`Route ${req.originalUrl} not found`, 404));
 });
 
