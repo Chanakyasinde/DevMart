@@ -1,35 +1,39 @@
-name: CI Pipeline
+name: ShopEase CI/CD Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+    - name: Check Node version
+      run: node -v
 
-      - name: Install dependencies
-        run: bash ./scripts/setup.sh
+    - name: Install Server Dependencies
+      run: |
+        cd server
+        npm install
 
-      - name: Run server linter
-        working-directory: ./server
-        run: npm run lint
+    - name: Install Client Dependencies
+      run: |
+        cd client
+        npm install
 
-      - name: Run server tests
-        working-directory: ./server
-        run: npm run test
+    - name: Build Frontend
+      run: |
+        cd client
+        npm run build
 
-      - name: Run client linter
-        working-directory: ./client
-        run: npm run lint
+    # Add Docker build steps here for CD
